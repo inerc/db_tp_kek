@@ -188,7 +188,7 @@ def threadListPosts():
 
     logging.info("THREAD LIST POSTS SUCCESSFUL================")
     return response
-    
+
 @app.route("/db/api/thread/open/", methods = ['POST'])
 def openThread():
     if "thread" in request.json:
