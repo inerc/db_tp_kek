@@ -45,7 +45,7 @@ def createForum():
     response = json.dumps(answer)
     logging.info("================SUCCESSFUL FORUM CREATION\n")
     return response
-
+    
 @app.route("/db/api/forum/details/", methods = ['GET'])
 def forumDetails():
     from User import getUserInfoByID
@@ -66,7 +66,7 @@ def forumDetails():
         answer["user"] = user
     response = json.dumps({ "code": 0, "response": answer})
     return response
-
+    
 @app.route("/db/api/forum/listPosts/", methods = ['GET'])
 def forumListPosts():
     logging.info("FORUM LIST POSTS===========================")
@@ -101,7 +101,7 @@ def forumListPosts():
     logging.info(response)
     logging.info("FORUM LIST POSTS SUCCESSFUL================")
     return response
-
+    
 @app.route("/db/api/forum/listUsers/", methods = ['GET'])
 def forumListUsers():
     from User import getListUsersOfForum
@@ -123,7 +123,7 @@ def forumListUsers():
     logging.info("  Response : ")
     logging.info(response)
     return response
-
+    
 @app.route("/db/api/forum/listThreads/", methods = ['GET'])
 def forumListThreads():
     logging.info("FORUM LIST THREADS===========================")

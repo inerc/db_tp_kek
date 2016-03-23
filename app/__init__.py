@@ -16,4 +16,4 @@ conn = mysql.connect()
 conn.autocommit(True)
 cursor = conn.cursor()
 
-from app import generic
+from app import User, Forum, Thread, Post, General
