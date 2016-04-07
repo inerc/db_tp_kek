@@ -58,7 +58,7 @@ def createThread():
     logging.info("  Answer : " + response)
     logging.info("================SUCCESSFUL THREAD CREATION\n")
     return response
-    
+
 @app.route("/db/api/thread/close/", methods = ['POST'])
 def closeThread():
     logging.info("=====================================CLOSING THREAD BEGIN==========================================")
@@ -83,7 +83,7 @@ def closeThread():
     logging.info(response)
     logging.info("=====================================CLOSING THREAD END============================================\n")
     return response
-    
+
 @app.route("/db/api/thread/details/", methods = ['GET'])
 def threadDetails():
     logging.info("===================THREAD DETAILS BEGIN=====================\n==========================================================")
@@ -110,7 +110,7 @@ def threadDetails():
     logging.info(response)
     logging.info("===================THREAD DETAILS END=====================\n==========================================================\n")
     return response
-    
+
 @app.route("/db/api/thread/list/", methods = ['GET'])
 def threadsList():
     logging.info("=====================================THREAD LIST BEGIN============================================")
@@ -161,7 +161,7 @@ def threadsList():
     logging.info(response)
     logging.info("=====================================THREAD LIST END============================================")
     return response
-    
+
 @app.route("/db/api/thread/listPosts/", methods = ['GET'])
 def threadListPosts():
     logging.info("THREAD LIST POSTS===========================")
@@ -176,11 +176,11 @@ def threadListPosts():
     limit = getOptionalGetParameterOrDefault(request.args, "limit", None)
     order = getOptionalGetParameterOrDefault(request.args, "order", "desc")
     since = getOptionalGetParameterOrDefault(request.args, "since", None)
-    sort  = getOptionalGetParameterOrDefault(request.args, "sort ", "flat")
+    sort  = request.args.get('sort', 'flat')
     logging.info("  thread  = " + str(thread))
     logging.info("  sort    = " + str(sort))
 
-    answer = getListPostsOfThread(thread, since, order, limit)
+    answer = getListPostsOfThread(thread, since, order, limit, sort)
 
     response = json.dumps({"code": 0, "response": answer})
     logging.info("  Response : ")
@@ -209,7 +209,7 @@ def openThread():
 
     response = json.dumps({"code": 0, "response": thread})
     return response
-    
+
 @app.route("/db/api/thread/remove/", methods = ['POST'])
 def removeThread():
     from Post import removePostsOfThread
@@ -234,7 +234,7 @@ def removeThread():
     response = json.dumps({ "code": 0, "response": {"thread": thread}})
     logging.info("REMOVING THREAD SUCCESSFULL\n")
     return response
-    
+
 @app.route("/db/api/thread/restore/", methods = ['POST'])
 def restoreThread():
     from Post import restorePostsOfThread
@@ -259,7 +259,7 @@ def restoreThread():
     response = json.dumps({ "code": 0, "response": {"thread": thread}})
     logging.info("REMOVING THREAD SUCCESSFULL\n")
     return response
-    
+
 @app.route("/db/api/thread/subscribe/", methods = ['POST'])
 def subscribeThread():
     logging.info("=======================SUBSCRIBE THREAD======================")
@@ -283,7 +283,7 @@ def subscribeThread():
     logging.info("  Result : " + response)
     logging.info("=======================SUBSCRIBE THREAD SUCCESS======================")
     return response
-    
+
 @app.route("/db/api/thread/unsubscribe/", methods = ['POST'])
 def unsubscribeThread():
     logging.info("=====================UNSUBSCRIBE THREAD======================")
@@ -307,7 +307,7 @@ def unsubscribeThread():
     logging.info("  Result : " + response)
     logging.info("=====================UNSUBSCRIBE THREAD SUCCESS======================")
     return response
-    
+
 @app.route("/db/api/thread/update/", methods = ['POST'])
 def updateThread():
     logging.info("=======================UPDATE THREAD==========================")
@@ -326,7 +326,7 @@ def updateThread():
     logging.info("=======================UPDATE THREAD SUCCESS==================")
 
     return response
-    
+
 @app.route("/db/api/thread/vote/", methods = ['POST'])
 def voteThread():
     logging.info("================THREAD VOTE=====================")

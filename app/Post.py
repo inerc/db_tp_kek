@@ -27,12 +27,12 @@ def createPost():
     except:
         return json.dumps({"code": 2, "response": error_messages[2]})
 
-    parent        = getOptionalParameterOrDefault(request.json, "parent", None)
-    isApproved    = getOptionalParameterOrDefault(request.json, "isApproved", False)
-    isHighlighted = getOptionalParameterOrDefault(request.json, "isHighlighted", False)
-    isEdited      = getOptionalParameterOrDefault(request.json, "isEdited", False)
-    isSpam        = getOptionalParameterOrDefault(request.json, "isSpam", False)
-    isDeleted     = getOptionalParameterOrDefault(request.json, "isDeleted", False)
+    parent        = request.json.get('parent', None)
+    isApproved    = request.json.get('isApproved', False)
+    isHighlighted = request.json.get('isHighlighted', False)
+    isEdited      = request.json.get('isEdited', False)
+    isSpam        = request.json.get('isSpam', False)
+    isDeleted     = request.json.get('isDeleted', False)
 
     try:
         id_Forum = getForumDetailsByShortName(forum)["id"]
@@ -94,7 +94,7 @@ def postDetails():
     logging.info("  RESPONSE : " + response)
     logging.info("===================POST DETAILS END=====================\n============================================================\n")
     return response
-    
+
 @app.route("/db/api/post/list/", methods = ['GET'])
 def postsList():
     forum   = None
@@ -142,7 +142,7 @@ def removePost():
 
     response = json.dumps({"code": 0, "response": post})
     return response
-    
+
 @app.route("/db/api/post/restore/", methods = ['POST'])
 def restorePost():
     if "post" in request.json:
@@ -162,7 +162,7 @@ def restorePost():
 
     response = json.dumps({"code": 0, "response": post})
     return response
-    
+
 @app.route("/db/api/post/update/", methods = ['POST'])
 def updatePost():
     logging.info("  Updating post")
@@ -184,7 +184,7 @@ def updatePost():
     response = json.dumps({"code": 0, "response": post})
     logging.info("  Post " + str(post) + (" is updated successfully\n"))
     return response
-    
+
 @app.route("/db/api/post/vote/", methods = ['POST'])
 def votePost():
     logging.info("================POST VOTE=====================")
@@ -254,7 +254,7 @@ def getPostDetailsByID(postID, related):
     logging.info("      ===================================")
     return answer
 
-def getListPostsOfThread(thread, since, order, limit):
+def getListPostsOfThread(thread, since, order, limit, sort='flat'):
     logging.info("      GETTING LIST POSTS BY THREAD")
     sql = "SELECT * FROM Post WHERE idThread = %s"
     params = [thread]
@@ -262,11 +262,12 @@ def getListPostsOfThread(thread, since, order, limit):
         sql += " AND date >= %s"
         params.append(since)
 
-    sql += " ORDER BY date " + order
-
-    if limit:
-        sql += " LIMIT %s"
-        params.append(int(limit))
+    sql += " ORDER BY date "
+    if sort == 'flat':
+        sql += order
+        if limit:
+            sql += " LIMIT %s"
+            params.append(int(limit))
 
     logging.info("      Final SQL    listPosts : " + sql)
     logging.info("      Final PARAMS listPosts : " + str(params))
@@ -274,6 +275,40 @@ def getListPostsOfThread(thread, since, order, limit):
     cursor.execute(sql, params)
     result = cursor.fetchall()
     answer = getArrayPostsFormDDictionary(result, [])
+    if sort in {'tree', 'parent_tree'}:
+        cats = {}
+        for x in answer:
+            if x['parent'] is None:
+                try:
+                    cats['root'].append(x)
+                except KeyError:
+                    cats['root'] = [x]
+            else:
+                try:
+                    cats[x['parent']].append(x)
+                except:
+                    cats[x['parent']] = [x]
+        limit = int(limit)
+        if sort == 'parent_tree':
+            cats['root'] = cats['root'][:limit]
+        if order == 'desc':
+            cats['root'].reverse()
+        result = []
+        root_h = ['root']
+        while cats[root_h[-1]]:
+            curr_ell = cats[root_h[-1]][0]
+            result.append(curr_ell)
+            del cats[root_h[-1]][0]
+            if curr_ell['id'] in cats and cats[curr_ell['id']]:
+                root_h.append(curr_ell['id'])
+            elif not cats[root_h[-1]]:
+                while root_h and not cats[root_h[-1]]:
+                    root_h = root_h[:-1]
+                if not root_h:
+                    break
+            if sort == 'tree' and len(result) >= limit:
+                break
+        answer = result
 
     logging.info("      GETTED POSTS : ")
     logging.info(answer)
