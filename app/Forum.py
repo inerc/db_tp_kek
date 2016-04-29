@@ -6,7 +6,7 @@ import json
 
 @app.route("/db/api/forum/create/", methods = ['POST'])
 def createForum():
-    logging.info("================FORUM CREATION")
+    #logging.info("================FORUM CREATION")
     # logging.info("REQUEST :")
     # logging.info(request.json)
     # logging.info("SH_NAME : " + request.json["short_name"])
@@ -14,13 +14,13 @@ def createForum():
     # logging.info("NAME : " + request.json["name"].encode("UTF-8"))
     try:
         name       = request.json["name"].encode("UTF-8")
-        logging.info("NAME : " + name)
+        #logging.info("NAME : " + name)
         short_name = request.json["short_name"]
-        logging.info("SHORT_NAME : " + short_name)
+        #logging.info("SHORT_NAME : " + short_name)
         user       = request.json["user"]
-        logging.info("USER : " + user)
+        #logging.info("USER : " + user)
     except:
-        logging.info("error in parsing params")
+        #logging.info("error in parsing params")
         return json.dumps({"code": 2, "response": error_messages[2]})
 
     cursor.execute("SELECT idUser FROM User WHERE User.email = %s", [user])
@@ -43,7 +43,7 @@ def createForum():
     answer = {"code": 0, "response": {"id": idF, "name": name, "short_name":short_name, "user": user}}
 
     response = json.dumps(answer)
-    logging.info("================SUCCESSFUL FORUM CREATION\n")
+    #logging.info("================SUCCESSFUL FORUM CREATION\n")
     return response
     
 @app.route("/db/api/forum/details/", methods = ['GET'])
@@ -69,7 +69,7 @@ def forumDetails():
     
 @app.route("/db/api/forum/listPosts/", methods = ['GET'])
 def forumListPosts():
-    logging.info("FORUM LIST POSTS===========================")
+   # logging.info("FORUM LIST POSTS===========================")
     from Post import getListPostsOfForum
     from Thread import getThreadDetailsByID
     from User import getUserEmailByID
@@ -87,26 +87,26 @@ def forumListPosts():
     try:
         related = request.args.getlist("related")
     except:
-        logging.info("  related is empty")
+       # logging.info("  related is empty")
         related = []
 
-    logging.info("  forum   = " + str(forum))
-    logging.info("  related = " + str(related))
+    #logging.info("  forum   = " + str(forum))
+    #logging.info("  related = " + str(related))
 
     answer = []
     answer = getListPostsOfForum(forum, since, order, limit, related)
 
     response = json.dumps({"code": 0, "response": answer})
-    logging.info("  Response : ")
-    logging.info(response)
-    logging.info("FORUM LIST POSTS SUCCESSFUL================")
+   # logging.info("  Response : ")
+   # logging.info(response)
+   # logging.info("FORUM LIST POSTS SUCCESSFUL================")
     return response
     
 @app.route("/db/api/forum/listUsers/", methods = ['GET'])
 def forumListUsers():
     from User import getListUsersOfForum
 
-    logging.info("FORUM LIST USERS===========================")
+    #logging.info("FORUM LIST USERS===========================")
 
     try:
         forum = request.args.get("forum")
@@ -120,13 +120,13 @@ def forumListUsers():
     answer = getListUsersOfForum(forum, since, order, limit)
 
     response = json.dumps({"code": 0, "response": answer})
-    logging.info("  Response : ")
-    logging.info(response)
+   # logging.info("  Response : ")
+    #logging.info(response)
     return response
     
 @app.route("/db/api/forum/listThreads/", methods = ['GET'])
 def forumListThreads():
-    logging.info("FORUM LIST THREADS===========================")
+   # logging.info("FORUM LIST THREADS===========================")
     from Thread import getListThreadsOfForum
 
     forum  = None
@@ -142,16 +142,16 @@ def forumListThreads():
     try:
         related = request.args.getlist("related")
     except:
-        logging.info("  related is empty")
+       # logging.info("  related is empty")
         related = []
 
-    logging.info("  forum   = " + str(forum))
-    logging.info("  related = " + str(related))
+    #logging.info("  forum   = " + str(forum))
+   # logging.info("  related = " + str(related))
 
     answer = getListThreadsOfForum(forum, since, order, limit, related)
     response = json.dumps({"code": 0, "response": answer})
-    logging.info("  Response : ")
-    logging.info(response)
+    #logging.info("  Response : ")
+   # logging.info(response)
     return response
 
 def getForumDetailsByShortName(short_name):

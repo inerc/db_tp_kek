@@ -29,7 +29,7 @@ def getOptionalGetParameterOrDefault(args, param, default):
         data = default
     if data is None:
         data = default
-    logging.info("      option GET parameter " + str(param) + " : " + str(data))
+   # logging.info("      option GET parameter " + str(param) + " : " + str(data))
     return data
 #POST
 def getOptionalParameterOrDefault(json, param, default):
@@ -37,12 +37,12 @@ def getOptionalParameterOrDefault(json, param, default):
         data = json[param]
     else:
         data = default
-    logging.info("      option POST parameter " + str(param) + " : " + str(data))
+    #logging.info("      option POST parameter " + str(param) + " : " + str(data))
     return data
 
 def entryRelatedInRightValues(related, right):
     for item in related:
         if item not in right:
-            logging.info("      " + str(item) + " not in " + str(right))
+            #logging.info("      " + str(item) + " not in " + str(right))
             return False
     return True

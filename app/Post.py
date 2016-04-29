@@ -8,21 +8,21 @@ import json
 
 @app.route("/db/api/post/create/", methods = ['POST'])
 def createPost():
-    logging.info("================Post CREATION\n")
-    logging.info("Request : ")
-    logging.info(request.json)
-    logging.info(request.json["thread"])
+   # logging.info("================Post CREATION\n")
+    #logging.info("Request : ")
+    #logging.info(request.json)
+    #logging.info(request.json["thread"])
     try:
         thread = request.json["thread"]
         message = request.json["message"]
         date = request.json["date"]
         user = request.json["user"]
         forum = request.json["forum"]
-        logging.info("Thread : " + str(thread))
-        logging.info("Message : " + message)
-        logging.info("Date : " + str(date))
-        logging.info("User : " + str(user))
-        logging.info("Forum : " + str(forum))
+        #logging.info("Thread : " + str(thread))
+        #logging.info("Message : " + message)
+        #logging.info("Date : " + str(date))
+       # logging.info("User : " + str(user))
+       # logging.info("Forum : " + str(forum))
 
     except:
         return json.dumps({"code": 2, "response": error_messages[2]})
@@ -65,13 +65,13 @@ def createPost():
     answer["thread"] = thread
     answer["user"] = user
     response = json.dumps({"code": 0, "response": answer})
-    logging.info("  Response : " + response)
-    logging.info("================SUCCESSFUL Post CREATION\n")
+   # logging.info("  Response : " + response)
+    #logging.info("================SUCCESSFUL Post CREATION\n")
     return response
 
 @app.route("/db/api/post/details/", methods = ['GET'])
 def postDetails():
-    logging.info("===================POST DETAILS BEGIN=====================\n============================================================\n")
+    #logging.info("===================POST DETAILS BEGIN=====================\n============================================================\n")
 
     try:
         post = request.args.get("post")
@@ -80,19 +80,19 @@ def postDetails():
     try:
         related = request.args.getlist("related")
     except:
-        logging.info("  related is empty")
+        #logging.info("  related is empty")
         related = []
     related = []
-    logging.info("related : ")
-    logging.info(related)
-    logging.info("post : ")
-    logging.info(post)
+   # logging.info("related : ")
+   # logging.info(related)
+    #logging.info("post : ")
+    #logging.info(post)
     answer = getPostDetailsByID(post, related)
     if not answer:
         return json.dumps({"code": 1, "response": error_messages[1]})
     response = json.dumps({ "code": 0, "response": answer})
-    logging.info("  RESPONSE : " + response)
-    logging.info("===================POST DETAILS END=====================\n============================================================\n")
+    #logging.info("  RESPONSE : " + response)
+   # logging.info("===================POST DETAILS END=====================\n============================================================\n")
     return response
 
 @app.route("/db/api/post/list/", methods = ['GET'])
@@ -111,7 +111,7 @@ def postsList():
     order = getOptionalGetParameterOrDefault(request.args, "order", "desc")
     since = getOptionalGetParameterOrDefault(request.args, "since", None)
 
-    logging.info("  thread = " + str(thread))
+    #logging.info("  thread = " + str(thread))
 
     answer = {}
     if thread is not None:
@@ -165,7 +165,7 @@ def restorePost():
 
 @app.route("/db/api/post/update/", methods = ['POST'])
 def updatePost():
-    logging.info("  Updating post")
+    #logging.info("  Updating post")
     if "post" in request.json and "message" in request.json:
         post = request.json["post"]
         message = request.json["message"]
@@ -182,12 +182,12 @@ def updatePost():
     sql = "UPDATE Post SET message = %s WHERE idPost = %s"
     cursor.execute(sql, [message, post])
     response = json.dumps({"code": 0, "response": post})
-    logging.info("  Post " + str(post) + (" is updated successfully\n"))
+   # logging.info("  Post " + str(post) + (" is updated successfully\n"))
     return response
 
 @app.route("/db/api/post/vote/", methods = ['POST'])
 def votePost():
-    logging.info("================POST VOTE=====================")
+    #logging.info("================POST VOTE=====================")
 
     if "vote" in request.json and "post" in request.json:
         vote = request.json["vote"]
@@ -195,14 +195,14 @@ def votePost():
     else:
         return json.dumps({"code": 2, "response": error_messages[2]})
 
-    logging.info("  vote : " + str(vote) + ";  post : " + str(post))
+    #logging.info("  vote : " + str(vote) + ";  post : " + str(post))
 
     if vote == 1:
         addition = " likes = likes + 1"
     elif vote == -1:
         addition = " dislikes = dislikes + 1"
     else:
-        logging.info("  incorrect vote param : " + str(vote))
+        #logging.info("  incorrect vote param : " + str(vote))
         return json.dumps({"code": 2, "response": error_messages[2]})
 
     sql = "UPDATE Post SET" + addition + " WHERE idPost = %s"
@@ -211,9 +211,9 @@ def votePost():
     answer = getPostDetailsByID(post, [])
 
     response = json.dumps({"code": 0, "response": answer})
-    logging.info("  Response: ")
-    logging.info(response)
-    logging.info("================POST VOTE END=================")
+   # logging.info("  Response: ")
+   # logging.info(response)
+    #logging.info("================POST VOTE END=================")
 
     return response
 
@@ -221,9 +221,9 @@ def getPostDetailsByID(postID, related):
     sql = "SELECT * FROM Post WHERE idPost = %s"
     cursor.execute(sql, [postID])
     data = cursor.fetchone()
-    logging.info(data)
+   # logging.info(data)
     if (not data):
-        logging.info("      Thread not found")
+        #logging.info("      Thread not found")
         return None
     answer = {}
     answer["id"] = data[0]
@@ -249,13 +249,13 @@ def getPostDetailsByID(postID, related):
         answer["forum"] = getForumDetailsByShortName(answer["forum"])
     if "thread" in related:
         answer["thread"] = getThreadDetailsByID(answer["thread"], [])
-    logging.info("      ===========Answer getPostByID() : ")
-    logging.info(answer)
-    logging.info("      ===================================")
+   # logging.info("      ===========Answer getPostByID() : ")
+   # logging.info(answer)
+    #logging.info("      ===================================")
     return answer
 
 def getListPostsOfThread(thread, since, order, limit, sort='flat'):
-    logging.info("      GETTING LIST POSTS BY THREAD")
+    #logging.info("      GETTING LIST POSTS BY THREAD")
     sql = "SELECT * FROM Post WHERE idThread = %s"
     params = [thread]
     if since:
@@ -269,8 +269,8 @@ def getListPostsOfThread(thread, since, order, limit, sort='flat'):
             sql += " LIMIT %s"
             params.append(int(limit))
 
-    logging.info("      Final SQL    listPosts : " + sql)
-    logging.info("      Final PARAMS listPosts : " + str(params))
+    #logging.info("      Final SQL    listPosts : " + sql)
+    #logging.info("      Final PARAMS listPosts : " + str(params))
 
     cursor.execute(sql, params)
     result = cursor.fetchall()
@@ -310,14 +310,14 @@ def getListPostsOfThread(thread, since, order, limit, sort='flat'):
                 break
         answer = result
 
-    logging.info("      GETTED POSTS : ")
-    logging.info(answer)
-    logging.info("      ==============")
+    #logging.info("      GETTED POSTS : ")
+    #logging.info(answer)
+   # logging.info("      ==============")
 
     return answer
 
 def getListPostsOfForum(forum, since, order, limit, related):
-    logging.info("      GETTING LIST POSTS BY FORUM")
+    #logging.info("      GETTING LIST POSTS BY FORUM")
     idForum = getForumIdByShortName(forum)
     sql = "SELECT * FROM Post WHERE idForum = %s"
     params = [idForum]
@@ -331,16 +331,16 @@ def getListPostsOfForum(forum, since, order, limit, related):
         sql += " LIMIT %s"
         params.append(int(limit))
 
-    logging.info("      Final SQL    listPosts : " + sql)
-    logging.info("      Final PARAMS listPosts : " + str(params))
+   # logging.info("      Final SQL    listPosts : " + sql)
+    #logging.info("      Final PARAMS listPosts : " + str(params))
 
     cursor.execute(sql, params)
     result = cursor.fetchall()
     answer = getArrayPostsFormDDictionary(result, related)
 
-    logging.info("      GETTED POSTS : ")
-    logging.info(answer)
-    logging.info("      ==============")
+    #logging.info("      GETTED POSTS : ")
+   # logging.info(answer)
+    #logging.info("      ==============")
 
     return answer
 
@@ -372,16 +372,16 @@ def getArrayPostsFormDDictionary(dictionary, related):
             dict["user"] = getUserInfoByEmail(dict["user"])
         if "forum" in related:
             dict["forum"] = getForumDetailsByShortName(dict["forum"])
-        logging.info("      dictionary item, no message : " + str(dict))
+       # logging.info("      dictionary item, no message : " + str(dict))
         array.append(dict)
     return array
 
 def removePostsOfThread(thread):
-    logging.info("      removing posts")
+    #logging.info("      removing posts")
     sql = "UPDATE Post SET isDeleted = 1 WHERE idThread = %s"
     cursor.execute(sql, [thread])
 
 def restorePostsOfThread(thread):
-    logging.info("      restoring posts")
+    #logging.info("      restoring posts")
     sql = "UPDATE Post SET isDeleted = 0 WHERE idThread = %s"
     cursor.execute(sql, [thread])

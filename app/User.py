@@ -6,7 +6,7 @@ import Forum
 
 @app.route("/db/api/user/create/", methods = ['POST'])
 def createUser():
-    logging.info("================USER CREATION")
+   # logging.info("================USER CREATION")
     try:
         email    = request.json["email"]
     except:
@@ -16,29 +16,29 @@ def createUser():
         name     = request.json["name"]
     except:
         name     = None
-        logging.info("NAME IS None")
-        logging.info("_____________________")
+       # logging.info("NAME IS None")
+       # logging.info("_____________________")
     try:
         username = request.json["username"]
     except:
         username = None
-        logging.info("USERNAME IS None")
-        logging.info("_____________________")
+       # logging.info("USERNAME IS None")
+        #logging.info("_____________________")
     try:
         about    = request.json["about"]
     except:
         about    = None
-        logging.info("ABOUT IS None")
-        logging.info("_____________________")
+        #logging.info("ABOUT IS None")
+       # logging.info("_____________________")
 
     if (not isString([name, email, username, about])):
-        logging.info("one or more params not string")
+        #logging.info("one or more params not string")
         return json.dumps({"code": 2, "response": error_messages[2]})
 
     sql = "SELECT idUser FROM User WHERE email = %s"
     cursor.execute(sql, [email])
     if (cursor.fetchone() != None):
-        logging.info(email + " is already exists")
+        #logging.info(email + " is already exists")
         return json.dumps({"code": 5, "response": error_messages[5]})
 
     isAnonymous = False
@@ -61,7 +61,7 @@ def createUser():
     data['username'] = username
     answer = {"code": 0, "response": data}
     response = json.dumps(answer)
-    logging.info("================SUCCESSFUL USER CREATION\n")
+   # logging.info("================SUCCESSFUL USER CREATION\n")
     return response
 
 @app.route("/db/api/user/details/", methods = ['GET'])
@@ -70,7 +70,7 @@ def userDetails():
         email = request.args.get("user")
     except:
         return json.dumps({"code": 2, "response": error_messages[2]})
-    logging.info(email)
+   # logging.info(email)
     if (not isString([email])):
         return json.dumps({"code": 2, "response": error_messages[2]})
 
@@ -83,7 +83,7 @@ def userDetails():
 
 @app.route("/db/api/user/follow/", methods = ['POST'])
 def follow():
-    logging.info("================USER FOLLOW========================")
+   # logging.info("================USER FOLLOW========================")
     try:
         follower = request.json["follower"]
         followee = request.json["followee"]
@@ -95,8 +95,8 @@ def follow():
     except:
         return json.dumps({"code": 1, "response": error_messages[1]})
 
-    logging.info("  follower : " + str(idFollower))
-    logging.info("  followee : " + str(idFollowee))
+   # logging.info("  follower : " + str(idFollower))
+  #  logging.info("  followee : " + str(idFollowee))
 
     sql = "INSERT INTO Follower(idFollower, idFollowing) VALUES(%s, %s)"
 
@@ -113,15 +113,15 @@ def follow():
     userInfo["followers"] = emailsFollowers
     userInfo["following"] = emailsFollowing
     userInfo["subscriptions"] = []
-    logging.info("Response : ")
-    logging.info(userInfo)
+   # logging.info("Response : ")
+   # logging.info(userInfo)
     response = json.dumps({"code": 0, "response": userInfo})
-    logging.info("================USER FOLLOW SUCCESS================\n")
+   # logging.info("================USER FOLLOW SUCCESS================\n")
     return response
 
 @app.route("/db/api/user/listFollowers/", methods = ['GET'])
 def listFollowers():
-    logging.info("================USER listFollowers========================")
+   # logging.info("================USER listFollowers========================")
     try:
         user = request.args.get("user")
     except:
@@ -131,7 +131,7 @@ def listFollowers():
     order = getOptionalGetParameterOrDefault(request.args, "order", "desc")
     since = getOptionalGetParameterOrDefault(request.args, "since_id", None)
 
-    logging.info("user : " + user)
+   # logging.info("user : " + user)
 
     user_id = getUserIdByEmail(user)
     if not user_id:
@@ -145,14 +145,14 @@ def listFollowers():
         answer.append((user_by_email))
 
     response = json.dumps({ "code": 0, "response": answer })
-    logging.info("Response : ")
-    logging.info(response)
-    logging.info("================USER listFollowers END====================\n")
+  #  logging.info("Response : ")
+  #  logging.info(response)
+   # logging.info("================USER listFollowers END====================\n")
     return response
 
 @app.route("/db/api/user/listFollowing/", methods = ['GET'])
 def listFollowing():
-    logging.info("================USER listFollowing========================")
+  #  logging.info("================USER listFollowing========================")
     try:
         user = request.args.get("user")
     except:
@@ -162,7 +162,7 @@ def listFollowing():
     order = getOptionalGetParameterOrDefault(request.args, "order", "desc")
     since = getOptionalGetParameterOrDefault(request.args, "since_id", None)
 
-    logging.info("  User : " + user)
+  #  logging.info("  User : " + user)
 
     user_id = getUserIdByEmail(user)
     if not user_id:
@@ -176,14 +176,14 @@ def listFollowing():
         answer.append((user_by_email))
 
     response = json.dumps({ "code": 0, "response": answer })
-    logging.info("Response : ")
-    logging.info(response)
-    logging.info("================USER listFollowing END====================\n")
+  #  logging.info("Response : ")
+  #  logging.info(response)
+   # logging.info("================USER listFollowing END====================\n")
     return response
 
 @app.route("/db/api/user/listPosts/", methods = ['GET'])
 def userListPosts():
-    logging.info("================USER LISTPOSTS================")
+  #  logging.info("================USER LISTPOSTS================")
     try:
         user = request.args.get("user")
     except:
@@ -210,21 +210,21 @@ def userListPosts():
         params.append(int(limit))
         sql += " LIMIT %s"
 
-    logging.info("  Final SQL    listPosts : " + sql)
-    logging.info("  Final PARAMS listPosts : " + str(params))
+  #  logging.info("  Final SQL    listPosts : " + sql)
+   # logging.info("  Final PARAMS listPosts : " + str(params))
 
     cursor.execute(sql, params)
     result = getArrayDictFromDoubleDictionary(cursor.fetchall())
-    logging.info("  Results : ")
+  #  logging.info("  Results : ")
 
     response = json.dumps({ "code": 0, "response": result})
-    logging.info("  Response : " + response)
-    logging.info("================USER LISTPOSTS END============")
+  #  logging.info("  Response : " + response)
+  #  logging.info("================USER LISTPOSTS END============")
     return response
 
 @app.route("/db/api/user/unfollow/", methods = ['POST'])
 def unfollow():
-    logging.info("================USER UNFOLLOW========================")
+  #  logging.info("================USER UNFOLLOW========================")
     try:
         follower = request.json["follower"]
         followee = request.json["followee"]
@@ -236,20 +236,20 @@ def unfollow():
     except:
         return json.dumps({"code": 1, "response": error_messages[1]})
 
-    logging.info("  follower : " + str(idFollower))
-    logging.info("  followee : " + str(idFollowee))
+ #   logging.info("  follower : " + str(idFollower))
+ #   logging.info("  followee : " + str(idFollowee))
 
     sql = "DELETE FROM Follower WHERE idFollower = %s AND idFollowing = %s"
     cursor.execute(sql, [idFollower, idFollowee])
     answer = getUserInfoByID(idFollower)
 
     response = json.dumps({"code": 0, "response": answer})
-    logging.info("================USER UNFOLLOW END====================")
+ #   logging.info("================USER UNFOLLOW END====================")
     return response
 
 @app.route("/db/api/user/updateProfile/", methods = ['POST'])
 def updateProfile():
-    logging.info("=======================UPDATING PROFILE========================")
+ #   logging.info("=======================UPDATING PROFILE========================")
     try:
         about = request.json["about"]
         user = request.json["user"]
@@ -262,8 +262,8 @@ def updateProfile():
     result = getUserInfoByEmail(user)
 
     response = json.dumps({"code": 0, "response": result})
-    logging.info("  Result : " + response)
-    logging.info("=======================UPDATING PROFILE SUCCESSFUL=============")
+  #  logging.info("  Result : " + response)
+  #  logging.info("=======================UPDATING PROFILE SUCCESSFUL=============")
     return response
 
 def getUserInfoByEmail(email):
@@ -288,11 +288,11 @@ def getUserInfoByEmail(email):
         return None
 
 def getUserIdByEmail(email):
-    logging.info("      getting user by email : ")
+  #  logging.info("      getting user by email : ")
     sql = "SELECT idUser FROM User WHERE email = %s"
     cursor.execute(sql, [email])
     q_result = cursor.fetchone()[0]
-    logging.info("      getted user by email : " + str(q_result))
+  #  logging.info("      getted user by email : " + str(q_result))
     return q_result
 
 def getUserInfoByID(id):
@@ -328,7 +328,7 @@ def getUserEmailByID(id):
         return None
 
 def getFollowerEmails(idUser, since, order, limit):
-    logging.info("")
+  #  logging.info("")
     sql = "SELECT U.email FROM Follower F INNER JOIN User U ON F.idFollower = U.idUser WHERE F.idFollowing = %s"
     params = [idUser]
     if since:
@@ -341,12 +341,12 @@ def getFollowerEmails(idUser, since, order, limit):
     if limit:
         sql += " LIMIT %s"
         params.append(int(limit))
-    logging.info("      Final SQL    followerEmails : " + sql)
-    logging.info("      Final PARAMS followerEmails : " + str(params))
+  #  logging.info("      Final SQL    followerEmails : " + sql)
+  #  logging.info("      Final PARAMS followerEmails : " + str(params))
     cursor.execute(sql, params)
     emails = getArrayEmailsFromDoubleDictionary(cursor.fetchall())
-    logging.info("      EMAILS FOLLOWERS OF USER (" + str(idUser) + ") : " + str(emails))
-    logging.info("")
+  #  logging.info("      EMAILS FOLLOWERS OF USER (" + str(idUser) + ") : " + str(emails))
+  #  logging.info("")
     return emails
 
 def getFollowingEmails(idUser, since, order, limit):
@@ -362,11 +362,11 @@ def getFollowingEmails(idUser, since, order, limit):
     if limit:
         sql += " LIMIT %s"
         params.append(int(limit))
-    logging.info("      Final SQL    followingEmails : " + sql)
-    logging.info("      Final PARAMS followingEmails : " + str(params))
+ #   logging.info("      Final SQL    followingEmails : " + sql)
+#  logging.info("      Final PARAMS followingEmails : " + str(params))
     cursor.execute(sql, params)
     emails = getArrayEmailsFromDoubleDictionary(cursor.fetchall())
-    logging.info("      EMAILS FOLLOWING OF USER (" + str(idUser) + ") : " + str(emails))
+ #   logging.info("      EMAILS FOLLOWING OF USER (" + str(idUser) + ") : " + str(emails))
     return emails
 
 def getSubscriptions(idUser):
@@ -374,7 +374,7 @@ def getSubscriptions(idUser):
     cursor.execute(sql, [idUser])
 
     subscriptions = getArrayEmailsFromDoubleDictionary(cursor.fetchall())
-    logging.info("      Subscriptions of USER (" + str(idUser) + ") : " + str(subscriptions))
+  #  logging.info("      Subscriptions of USER (" + str(idUser) + ") : " + str(subscriptions))
     return subscriptions
 
 def getArrayEmailsFromDoubleDictionary(dictionary):
@@ -405,7 +405,7 @@ def getArrayDictFromDoubleDictionary(dictionary):
         dict["thread"] = item[12]
         dict["user"] = getUserEmailByID(item[13])
         dict["points"] = dict["likes"] - dict["dislikes"]
-        logging.info("      dictionary item, : " + str(dict))
+   #     logging.info("      dictionary item, : " + str(dict))
         array.append(dict)
     return array
 
@@ -422,7 +422,7 @@ def getArrayUsersFromDoubleDictionary(dictionary):
         data["followers"] = getFollowerEmails(data["id"], None, None, None)
         data["following"] = getFollowingEmails(data["id"], None, None, None)
         data["subscriptions"] = getSubscriptions(data["id"])
-        logging.info("      dictionary item : " + str(dict))
+   #     logging.info("      dictionary item : " + str(dict))
         array.append(data)
     return array
 
@@ -450,7 +450,7 @@ def getListUsersOfForum(forum, since, order, limit):
         sql += " AND U.idUser >= %s"
         params.append(int(since))
 
-    logging.info("      order = " + order)
+  #  logging.info("      order = " + order)
 
     sql += " ORDER BY U.name " + order
 
@@ -458,9 +458,9 @@ def getListUsersOfForum(forum, since, order, limit):
         sql += " LIMIT %s"
         params.append(int(limit))
 
-    logging.info("      Final SQL    followerEmails : " + sql)
-    logging.info("      Final PARAMS followerEmails : " + str(params))
+  #  logging.info("      Final SQL    followerEmails : " + sql)
+ #   logging.info("      Final PARAMS followerEmails : " + str(params))
     cursor.execute(sql, params)
     array = getArrayUsersFromDoubleDictionary(cursor.fetchall())
-    logging.info("      LIST USERES OF FORUM (" + str(idForum) + ") : " + str(array))
+  #  logging.info("      LIST USERES OF FORUM (" + str(idForum) + ") : " + str(array))
     return array
