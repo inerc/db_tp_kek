@@ -10,12 +10,14 @@ USE `tp_db` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tp_db`.`User` (
   `idUser` INT NOT NULL AUTO_INCREMENT,
-  `username` VARCHAR(255),
-  `email` VARCHAR(255) NOT NULL,
+  `username` CHAR(30),
+  `email` CHAR(30) NOT NULL,
   `name` CHAR(32) COMMENT '	',
   `about` TEXT,
   `isAnonymous` TINYINT(1) NULL DEFAULT false,
-  PRIMARY KEY (`idUser`),
+  PRIMARY KEY (`email`),
+  UNIQUE KEY `id` (`idUser`),
+  KEY `name` (`name`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC))
 ENGINE = InnoDB;
 
@@ -25,7 +27,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tp_db`.`Forum` (
   `idForum` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(255) NOT NULL COMMENT 'str forum name',
+  `name` CHAR(50) NOT NULL COMMENT 'str forum name',
   `short_name` VARCHAR(255) NOT NULL COMMENT 'str forum slug',
   `idFounder` INT NOT NULL COMMENT 'founder email',
   UNIQUE INDEX `user_UNIQUE` (`idForum` ASC),
@@ -48,6 +50,7 @@ CREATE TABLE IF NOT EXISTS `tp_db`.`Forum_User` (
   `idForum` INT NOT NULL,
   `idUser` INT NOT NULL,
   PRIMARY KEY (`idForum_User`),
+  UNIQUE KEY `user_tID` (`idUser`, `idForum`),
   INDEX `idForum_idx` (`idForum` ASC),
   INDEX `idUser_idx` (`idUser` ASC),
     FOREIGN KEY (`idForum`)
@@ -68,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `tp_db`.`Thread` (
   `idThread` INT NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(255) NOT NULL,
   `message` TEXT NOT NULL,
-  `slug` VARCHAR(255) NOT NULL,
+  `slug` CHAR(50) NOT NULL,
   `date` DATETIME NOT NULL,
   `isClosed` TINYINT(1) NOT NULL DEFAULT false,
   `isDeleted` TINYINT(1) NULL DEFAULT false,
@@ -77,6 +80,9 @@ CREATE TABLE IF NOT EXISTS `tp_db`.`Thread` (
   `likes` INT NOT NULL,
   `dislikes` INT NOT NULL,
   PRIMARY KEY (`idThread`),
+  KEY `user_date` (`idAuthor`, `date`),
+  KEY `forum_date` (`idForum`, `date`),
+  
   INDEX `idForum_idx` (`idForum` ASC),
   INDEX `idUser_idx` (`idAuthor` ASC),
     FOREIGN KEY (`idForum`)
@@ -109,6 +115,9 @@ CREATE TABLE IF NOT EXISTS `tp_db`.`Post` (
   `idThread` INT NOT NULL,
   `idAuthor` INT NOT NULL,
   PRIMARY KEY (`idPost`),
+  KEY `user_date` (`idAuthor`, `date`),
+  KEY `forum_date` (`idForum`, `date`),
+  KEY `thread_date` (`idThread`, `date`),
   INDEX `idForum_idx` (`idForum` ASC),
   INDEX `idUser_idx` (`idAuthor` ASC),
   INDEX `idThread_idx` (`idThread` ASC),
@@ -150,9 +159,13 @@ ENGINE = InnoDB;
 -- Table `tp_db`.`Follower`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tp_db`.`Follower` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `idfollower` INT NOT NULL,
   `idfollowing` INT NOT NULL,
-  PRIMARY KEY (`idfollower`, `idfollowing`),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `follower_following` (`idfollower`,`idfollowing`),
+  KEY `followee_follower` (`idfollowing`,`idfollower`),
+  
   INDEX `idUser_idx` (`idfollowing` ASC),
     FOREIGN KEY (`idfollower`)
     REFERENCES `tp_db`.`User` (`idUser`)
