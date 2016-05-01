@@ -18,7 +18,6 @@ CREATE TABLE IF NOT EXISTS `tp_db`.`User` (
   PRIMARY KEY (`email`),
   UNIQUE KEY `id` (`idUser`),
   KEY `name` (`name`),
-  UNIQUE INDEX `email_UNIQUE` (`email` ASC))
 ENGINE = InnoDB;
 
 
@@ -51,8 +50,7 @@ CREATE TABLE IF NOT EXISTS `tp_db`.`Forum_User` (
   `idUser` INT NOT NULL,
   PRIMARY KEY (`idForum_User`),
   UNIQUE KEY `user_tID` (`idUser`, `idForum`),
-  INDEX `idForum_idx` (`idForum` ASC),
-  INDEX `idUser_idx` (`idUser` ASC),
+ 
     FOREIGN KEY (`idForum`)
     REFERENCES `tp_db`.`Forum` (`idForum`)
     ON DELETE NO ACTION
@@ -118,9 +116,7 @@ CREATE TABLE IF NOT EXISTS `tp_db`.`Post` (
   KEY `user_date` (`idAuthor`, `date`),
   KEY `forum_date` (`idForum`, `date`),
   KEY `thread_date` (`idThread`, `date`),
-  INDEX `idForum_idx` (`idForum` ASC),
-  INDEX `idUser_idx` (`idAuthor` ASC),
-  INDEX `idThread_idx` (`idThread` ASC),
+
     FOREIGN KEY (`idForum`)
     REFERENCES `tp_db`.`Forum` (`idForum`)
     ON DELETE NO ACTION
