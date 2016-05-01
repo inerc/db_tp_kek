@@ -50,6 +50,7 @@ CREATE TABLE IF NOT EXISTS `tp_db`.`Forum_User` (
   `idUser` INT NOT NULL,
   PRIMARY KEY (`idForum_User`),
   UNIQUE KEY `user_tID` (`idUser`, `idForum`),
+  
 ENGINE = InnoDB;
 
 
