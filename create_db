@@ -51,6 +51,15 @@ CREATE TABLE IF NOT EXISTS `tp_db`.`Forum_User` (
   PRIMARY KEY (`idForum_User`),
   UNIQUE KEY `user_tID` (`idUser`, `idForum`),
   
+    FOREIGN KEY (`idForum`)
+ -    REFERENCES `tp_db`.`Forum` (`idForum`)
+ -    ON DELETE NO ACTION
+ -    ON UPDATE NO ACTION,
+ -    FOREIGN KEY (`idUser`)
+ -    REFERENCES `tp_db`.`User` (`idUser`)
+ -    ON DELETE NO ACTION
+ -    ON UPDATE NO ACTION)
+  
 ENGINE = InnoDB;
 
 
