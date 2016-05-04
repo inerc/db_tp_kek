@@ -1,3 +1,4 @@
+# coding: utf-8
 from app import app, cursor
 from flask import request, jsonify
 from functions import *
@@ -41,9 +42,10 @@ def createUser():
         #logging.info(email + " is already exists")
         return json.dumps({"code": 5, "response": error_messages[5]})
 
-    isAnonymous = False
-    if ("isAnonymous" in request.json):
-        isAnonymous = request.json["isAnonymous"]
+    #isAnonymous = False
+    #if ("isAnonymous" in request.json):
+    isAnonymous = request.json.get("isAnonymous", False)
+
 
     sql = "INSERT INTO User(username, email, name, about, isAnonymous) VALUES (%s, %s, %s, %s, %s)"
     cursor.execute(sql, [username, email, name, about, isAnonymous])
@@ -52,13 +54,23 @@ def createUser():
     cursor.execute(sql)
     idU = cursor.fetchone()[0]
 
-    data = {}
-    data['about'] = about
-    data['email'] = email
-    data['id'] = idU
-    data['isAnonymous'] = isAnonymous
-    data['name'] = name
-    data['username'] = username
+#    data = {}
+#    data['about'] = about
+#    data['email'] = email
+#    data['id'] = idU
+#    data['isAnonymous'] = isAnonymous
+#    data['name'] = name
+#    data['username'] = username
+
+    data = {
+            'about': about,
+            'email': email,
+            'id': idU,
+            'isAnonymous': isAnonymous,
+            'username': username,
+          }
+
+
     answer = {"code": 0, "response": data}
     response = json.dumps(answer)
    # logging.info("================SUCCESSFUL USER CREATION\n")
@@ -170,10 +182,11 @@ def listFollowing():
 
     emails = getFollowingEmails(user_id, since, order, limit)
 
-    answer = []
-    for email in emails:
-        user_by_email = getUserInfoByEmail(email)
-        answer.append((user_by_email))
+   # answer = []
+   # for email in emails:
+   #     user_by_email = getUserInfoByEmail(email)
+   #     answer.append((user_by_email))
+    answer = getUsersInfoByEmail(emails)
 
     response = json.dumps({ "code": 0, "response": answer })
   #  logging.info("Response : ")
@@ -286,6 +299,58 @@ def getUserInfoByEmail(email):
         return data
     else:
         return None
+
+def getUsersInfoByEmail(emails):
+    sql = "SELECT * FROM User WHERE email in (%s)" % ', '.join(map(lambda x: '\'%s\'' % x, emails))
+    cursor.execute(sql)
+
+    q_result = cursor.fetchall()
+    rows = []
+    for row in q_result:
+        data = {}
+        data["id"] = row[0]
+        data["username"] = row[1]
+        data["email"] = row[2]
+        data["name"] = row[3]
+        data["about"] = row[4]
+        data["isAnonymous"] = row[5]
+        # data["followers"] = getFollowerEmails(data["id"], None, None, None)
+        # data["following"] = getFollowingEmails(data["id"], None, None, None)
+        data["subscriptions"] = getSubscriptions(data["id"])
+        rows.append(data)
+    id_list = map(lambda x: x['id'], rows)
+    sql = "SELECT F.idFollowing, U.email FROM Follower F INNER JOIN User U ON F.idFollower = U.idUser WHERE F.idFollowing in (%s)" % ', '.join(map(str, id_list))
+    cursor.execute(sql)
+    q_result = cursor.fetchall()
+    followers = {}
+    for row in q_result:
+        try:
+            followers[row[0]].append(row[1])
+        except KeyError:
+            followers[row[0]] = [row[1]]
+
+    sql = "SELECT F.idFollower, U.email FROM Follower F INNER JOIN User U ON F.idFollowing = U.idUser WHERE F.idFollower in (%s)" % ', '.join(map(str, id_list))
+    cursor.execute(sql)
+    q_result = cursor.fetchall()
+    following = {}
+    for row in q_result:
+        try:
+            following[row[0]].append(row[1])
+        except KeyError:
+            following[row[0]] = [row[1]]
+
+
+    for row in rows:
+        try:
+            row['followers'] = followers[row['id']]
+        except KeyError:
+            row['followers'] = []
+        try:
+            row['following'] = following[row['id']]
+        except KeyError:
+            row['following'] = []
+    return rows
+
 
 def getUserIdByEmail(email):
   #  logging.info("      getting user by email : ")

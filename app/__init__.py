@@ -10,10 +10,12 @@ app.config['MYSQL_DATABASE_PASSWORD'] = '111222'
 app.config['MYSQL_DATABASE_DB'] = 'tp_db'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 
+
+
 mysql.init_app(app)
 
 conn = mysql.connect()
 conn.autocommit(True)
 cursor = conn.cursor()
 
-from app import User, Forum, Thread, Post,generic
+from app import User, Forum, Thread, Post,generic, functions
