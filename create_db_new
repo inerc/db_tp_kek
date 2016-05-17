@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS `tp_db`.`User` (
   `isAnonymous` TINYINT(1) NULL DEFAULT false,
   PRIMARY KEY `PK_User` (`idUser`),  
   KEY `IX_name` (`name`),
-  KEY `IX_email` (`email`),
+  KEY `IX_email` (`email`))
 ENGINE = InnoDB;
 
 
