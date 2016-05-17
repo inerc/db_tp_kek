@@ -19,7 +19,7 @@ sys.path.append('../doc')
 import tools
 from doc_conf import DISCR
 
-CONFIG_PATH = '/home/inerc/FlaskProdDB/DB/bin/db_tp_kek/conf/test.conf'
+CONFIG_PATH = '/home/tpadmin/TP_BD/bin/db_tp_kek/conf/test.conf'
 settings = tools.Configuration(CONFIG_PATH).get_section('func_test')
 
 class TestLog(object):
