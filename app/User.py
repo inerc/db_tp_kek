@@ -301,6 +301,8 @@ def getUserInfoByEmail(email):
         return None
 
 def getUsersInfoByEmail(emails):
+    if not emails:
+        return []
     sql = "SELECT * FROM User WHERE email in (%s)" % ', '.join(map(lambda x: '\'%s\'' % x, emails))
     cursor.execute(sql)
 

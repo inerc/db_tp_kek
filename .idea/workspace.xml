@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c83aa7d-7c69-4bee-9a11-700f80e28b55" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Forum.py" afterPath="$PROJECT_DIR$/app/Forum.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Post.py" afterPath="$PROJECT_DIR$/app/Post.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Thread.py" afterPath="$PROJECT_DIR$/app/Thread.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.py" afterPath="$PROJECT_DIR$/app/User.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/forum.py" afterPath="$PROJECT_DIR$/app/forum.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/funcition.py" afterPath="$PROJECT_DIR$/app/funcition.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/functions.py" afterPath="$PROJECT_DIR$/app/functions.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myLog.log" afterPath="$PROJECT_DIR$/myLog.log" />
     </list>
     <ignored path="technopark-db-api.iws" />
     <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +29,7 @@
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state relative-caret-position="342">
               <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
@@ -44,7 +41,7 @@
       <file leaf-file-name="Forum.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Forum.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.32258">
+            <state relative-caret-position="2700">
               <caret line="153" column="4" selection-start-line="153" selection-start-column="4" selection-end-line="153" selection-end-column="4" />
               <folding />
             </state>
@@ -54,7 +51,7 @@
       <file leaf-file-name="func_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/func_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state relative-caret-position="17352">
               <caret line="977" column="24" selection-start-line="977" selection-start-column="16" selection-end-line="977" selection-end-column="24" />
               <folding>
                 <element signature="e#17#26#0" expanded="true" />
@@ -66,34 +63,21 @@
       <file leaf-file-name="generic.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/generic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="49" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+            <state relative-caret-position="324">
+              <caret line="18" column="62" selection-start-line="18" selection-start-column="62" selection-end-line="18" selection-end-column="62" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forum.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/forum.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="13.32258">
-              <caret line="153" column="4" selection-start-line="153" selection-start-column="4" selection-end-line="153" selection-end-column="4" />
-              <folding>
-                <element signature="e#24#51#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="funcition.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/funcition.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-26.129032">
-              <caret line="45" column="25" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="25" />
-              <folding>
-                <element signature="e#24#49#0" expanded="true" />
+                <marker date="1463604295980" expanded="true" signature="149:173" ph="DELETE FROM " />
+                <marker date="1463604295980" expanded="true" signature="196:212" ph="DELETE FROM " />
+                <marker date="1463604295980" expanded="true" signature="235:253" ph="DELETE FROM " />
+                <marker date="1463604295980" expanded="true" signature="276:293" ph="DELETE FROM " />
+                <marker date="1463604295980" expanded="true" signature="316:338" ph="DELETE FROM " />
+                <marker date="1463604295980" expanded="true" signature="361:381" ph="DELETE FROM " />
+                <marker date="1463604295980" expanded="true" signature="404:420" ph="DELETE FROM " />
+                <marker date="1463604295980" expanded="true" signature="648:674" ph="SELECT COUNT... Forum" />
+                <marker date="1463604295980" expanded="true" signature="741:766" ph="SELECT COUNT... User" />
+                <marker date="1463604295980" expanded="true" signature="833:860" ph="SELECT COUNT... Thread" />
+                <marker date="1463604295980" expanded="true" signature="928:953" ph="SELECT COUNT... Post" />
               </folding>
             </state>
           </provider>
@@ -102,7 +86,7 @@
       <file leaf-file-name="Thread.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Thread.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.1935484">
+            <state relative-caret-position="7758">
               <caret line="431" column="12" selection-start-line="431" selection-start-column="12" selection-end-line="431" selection-end-column="12" />
               <folding>
                 <element signature="e#24#51#0" expanded="true" />
@@ -111,13 +95,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="User.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/User.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="10.627907">
-              <caret line="464" column="3" selection-start-line="464" selection-start-column="3" selection-end-line="464" selection-end-column="3" />
+            <state relative-caret-position="3308">
+              <caret line="304" column="17" selection-start-line="304" selection-start-column="17" selection-end-line="304" selection-end-column="17" />
               <folding>
-                <element signature="e#0#27#0" expanded="true" />
+                <marker date="1464213544372" expanded="true" signature="1099:1139" ph="SELECT idUse... User" />
+                <marker date="1464213544372" expanded="true" signature="1469:1556" ph="INSERT INTO User... " />
+                <marker date="1464213544372" expanded="true" signature="1639:1667" ph="SELECT MAX(i... User" />
+                <marker date="1464213544372" expanded="true" signature="3420:3480" ph="INSERT INTO Follower... " />
+                <marker date="1464213544372" expanded="true" signature="7047:7132" ph="SELECT P.* F... Post" />
+                <marker date="1464213544372" expanded="true" signature="8431:8494" ph="DELETE FROM " />
+                <marker date="1464213544372" expanded="true" signature="9169:9223" ph="UPDATE User " />
+                <marker date="1464213544372" expanded="true" signature="9560:9595" ph="SELECT * FRO... User" />
+                <marker date="1464213544372" expanded="true" signature="10277:10315" ph="SELECT * FRO... User" />
+                <marker date="1464213544372" expanded="true" signature="10970:11088" ph="SELECT F.idF... Follower" />
+                <marker date="1464213544372" expanded="true" signature="11358:11475" ph="SELECT F.idF... Follower" />
+                <marker date="1464213544372" expanded="true" signature="12114:12154" ph="SELECT idUse... User" />
+                <marker date="1464213544372" expanded="true" signature="12349:12385" ph="SELECT * FRO... User" />
+                <marker date="1464213544372" expanded="true" signature="13020:13060" ph="SELECT email... User" />
+                <marker date="1464213544372" expanded="true" signature="13297:13397" ph="SELECT U.ema... Follower" />
+                <marker date="1464213544372" expanded="true" signature="14096:14196" ph="SELECT U.ema... Follower" />
+                <marker date="1464213544372" expanded="true" signature="14850:14901" ph="SELECT idThr... Subscription" />
+                <marker date="1464213544372" expanded="true" signature="17371:17466" ph="SELECT DISTI... User" />
               </folding>
             </state>
           </provider>
@@ -126,19 +127,32 @@
       <file leaf-file-name="Post.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Post.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.387096">
+            <state relative-caret-position="6912">
               <caret line="384" column="5" selection-start-line="384" selection-start-column="5" selection-end-line="384" selection-end-column="5" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
+                <marker date="1463604295980" expanded="true" signature="1451:1667" ph="INSERT INTO Post... " />
+                <marker date="1463604295980" expanded="true" signature="1834:1862" ph="SELECT MAX(i... Post" />
+                <marker date="1463604295980" expanded="true" signature="4754:4795" ph="SELECT idPos... Post" />
+                <marker date="1463604295980" expanded="true" signature="4961:5008" ph="UPDATE Post " />
+                <marker date="1463604295980" expanded="true" signature="5355:5396" ph="SELECT idPos... Post" />
+                <marker date="1463604295980" expanded="true" signature="5593:5640" ph="UPDATE Post " />
+                <marker date="1463604295980" expanded="true" signature="6094:6135" ph="SELECT idPos... Post" />
+                <marker date="1463604295980" expanded="true" signature="6332:6378" ph="UPDATE Post " />
+                <marker date="1463604295980" expanded="true" signature="7663:7699" ph="SELECT * FRO... Post" />
+                <marker date="1463604295980" expanded="true" signature="9061:9099" ph="SELECT * FRO... Post" />
+                <marker date="1463604295980" expanded="true" signature="11087:11124" ph="SELECT * FRO... Post" />
+                <marker date="1463604295980" expanded="true" signature="13048:13097" ph="UPDATE Post " />
+                <marker date="1463604295980" expanded="true" signature="13222:13271" ph="UPDATE Post " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="functions.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="functions.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.129032">
+            <state relative-caret-position="504">
               <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
               <folding />
             </state>
@@ -181,11 +195,17 @@
       </list>
     </option>
   </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
-    <option name="y" value="-4" />
+    <option name="y" value="24" />
     <option name="width" value="1301" />
-    <option name="height" value="772" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -212,7 +232,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
@@ -305,6 +324,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -314,35 +334,33 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Confirmation" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
-      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
-      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
-      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
       <method />
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -352,27 +370,15 @@
       <option name="METHOD_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
-      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
-      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
-      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -514,6 +520,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="technopark-db-api" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -613,19 +620,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="executeSpecs" factoryName="Gauge Execution">
-      <setting name="environment" value="" />
-      <setting name="specsToExecute" value="" />
-      <setting name="tags" value="" />
-      <setting name="parallelNodes" value="" />
-      <setting name="execInParallel" value="false" />
-      <setting name="programParameters" value="" />
-      <setting name="workingDirectory" value="" />
-      <setting name="moduleName" value="" />
-      <envMap />
-      <setting name="rowsRange" value="" />
-      <method />
-    </configuration>
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -636,6 +630,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="technopark-db-api" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -655,6 +650,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="technopark-db-api" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -674,6 +670,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="technopark-db-api" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -695,6 +692,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="technopark-db-api" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -717,6 +715,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="technopark-db-api" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -746,38 +745,45 @@
       <envs />
       <method />
     </configuration>
-    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-    </configuration>
   </component>
   <component name="SbtLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
     </option>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="0c83aa7d-7c69-4bee-9a11-700f80e28b55" name="Default" comment="" />
       <created>1458718679826</created>
       <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
       <updated>1458718679826</updated>
+      <workItem from="1464213492979" duration="354000" />
     </task>
     <servers />
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="354000" />
+  </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
+    <frame x="65" y="24" width="1301" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2438247" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24365872" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -802,35 +808,36 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/conf/test.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/generic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="23" column="49" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
+            <marker date="1463604295980" expanded="true" signature="149:173" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="196:212" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="235:253" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="276:293" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="316:338" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="361:381" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="404:420" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="648:674" ph="SELECT COUNT... Forum" />
+            <marker date="1463604295980" expanded="true" signature="741:766" ph="SELECT COUNT... User" />
+            <marker date="1463604295980" expanded="true" signature="833:860" ph="SELECT COUNT... Thread" />
+            <marker date="1463604295980" expanded="true" signature="928:953" ph="SELECT COUNT... Post" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/forum.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="201" column="0" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/forum.py" />
     <entry file="file://$PROJECT_DIR$/app/Thread.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#24#51#0" expanded="true" />
@@ -840,17 +847,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Post.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="386" column="33" selection-start-line="386" selection-start-column="33" selection-end-line="386" selection-end-column="33" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
+            <marker date="1463604295980" expanded="true" signature="1451:1667" ph="INSERT INTO Post... " />
+            <marker date="1463604295980" expanded="true" signature="1834:1862" ph="SELECT MAX(i... Post" />
+            <marker date="1463604295980" expanded="true" signature="4754:4795" ph="SELECT idPos... Post" />
+            <marker date="1463604295980" expanded="true" signature="4961:5008" ph="UPDATE Post " />
+            <marker date="1463604295980" expanded="true" signature="5355:5396" ph="SELECT idPos... Post" />
+            <marker date="1463604295980" expanded="true" signature="5593:5640" ph="UPDATE Post " />
+            <marker date="1463604295980" expanded="true" signature="6094:6135" ph="SELECT idPos... Post" />
+            <marker date="1463604295980" expanded="true" signature="6332:6378" ph="UPDATE Post " />
+            <marker date="1463604295980" expanded="true" signature="7663:7699" ph="SELECT * FRO... Post" />
+            <marker date="1463604295980" expanded="true" signature="9061:9099" ph="SELECT * FRO... Post" />
+            <marker date="1463604295980" expanded="true" signature="11087:11124" ph="SELECT * FRO... Post" />
+            <marker date="1463604295980" expanded="true" signature="13048:13097" ph="UPDATE Post " />
+            <marker date="1463604295980" expanded="true" signature="13222:13271" ph="UPDATE Post " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -858,7 +878,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/run_api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding />
         </state>
@@ -866,7 +886,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
@@ -876,54 +896,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myLog.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/User.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#27#0" expanded="true" />
+            <marker date="1464213544372" expanded="true" signature="1099:1139" ph="SELECT idUse... User" />
+            <marker date="1464213544372" expanded="true" signature="1469:1556" ph="INSERT INTO User... " />
+            <marker date="1464213544372" expanded="true" signature="1639:1667" ph="SELECT MAX(i... User" />
+            <marker date="1464213544372" expanded="true" signature="3420:3480" ph="INSERT INTO Follower... " />
+            <marker date="1464213544372" expanded="true" signature="7047:7132" ph="SELECT P.* F... Post" />
+            <marker date="1464213544372" expanded="true" signature="8431:8494" ph="DELETE FROM " />
+            <marker date="1464213544372" expanded="true" signature="9169:9223" ph="UPDATE User " />
+            <marker date="1464213544372" expanded="true" signature="9560:9595" ph="SELECT * FRO... User" />
+            <marker date="1464213544372" expanded="true" signature="10277:10315" ph="SELECT * FRO... User" />
+            <marker date="1464213544372" expanded="true" signature="10970:11088" ph="SELECT F.idF... Follower" />
+            <marker date="1464213544372" expanded="true" signature="11358:11475" ph="SELECT F.idF... Follower" />
+            <marker date="1464213544372" expanded="true" signature="12114:12154" ph="SELECT idUse... User" />
+            <marker date="1464213544372" expanded="true" signature="12349:12385" ph="SELECT * FRO... User" />
+            <marker date="1464213544372" expanded="true" signature="13020:13060" ph="SELECT email... User" />
+            <marker date="1464213544372" expanded="true" signature="13297:13397" ph="SELECT U.ema... Follower" />
+            <marker date="1464213544372" expanded="true" signature="14096:14196" ph="SELECT U.ema... Follower" />
+            <marker date="1464213544372" expanded="true" signature="14850:14901" ph="SELECT idThr... Subscription" />
+            <marker date="1464213544372" expanded="true" signature="17371:17466" ph="SELECT DISTI... User" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/generic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="23" column="49" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
+            <marker date="1463604295980" expanded="true" signature="149:173" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="196:212" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="235:253" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="276:293" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="316:338" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="361:381" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="404:420" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="648:674" ph="SELECT COUNT... Forum" />
+            <marker date="1463604295980" expanded="true" signature="741:766" ph="SELECT COUNT... User" />
+            <marker date="1463604295980" expanded="true" signature="833:860" ph="SELECT COUNT... Thread" />
+            <marker date="1463604295980" expanded="true" signature="928:953" ph="SELECT COUNT... Post" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/forum.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="201" column="0" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/funcition.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="15" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
-          <folding>
-            <element signature="e#24#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/forum.py" />
+    <entry file="file://$PROJECT_DIR$/app/funcition.py" />
     <entry file="file://$PROJECT_DIR$/app/Thread.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="179" column="46" selection-start-line="179" selection-start-column="46" selection-end-line="179" selection-end-column="46" />
           <folding>
             <element signature="e#24#51#0" expanded="true" />
@@ -933,14 +963,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/create_db">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -948,7 +978,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/run_api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding />
         </state>
@@ -956,7 +986,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
@@ -966,54 +996,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myLog.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/User.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#27#0" expanded="true" />
+            <marker date="1464213544372" expanded="true" signature="1099:1139" ph="SELECT idUse... User" />
+            <marker date="1464213544372" expanded="true" signature="1469:1556" ph="INSERT INTO User... " />
+            <marker date="1464213544372" expanded="true" signature="1639:1667" ph="SELECT MAX(i... User" />
+            <marker date="1464213544372" expanded="true" signature="3420:3480" ph="INSERT INTO Follower... " />
+            <marker date="1464213544372" expanded="true" signature="7047:7132" ph="SELECT P.* F... Post" />
+            <marker date="1464213544372" expanded="true" signature="8431:8494" ph="DELETE FROM " />
+            <marker date="1464213544372" expanded="true" signature="9169:9223" ph="UPDATE User " />
+            <marker date="1464213544372" expanded="true" signature="9560:9595" ph="SELECT * FRO... User" />
+            <marker date="1464213544372" expanded="true" signature="10277:10315" ph="SELECT * FRO... User" />
+            <marker date="1464213544372" expanded="true" signature="10970:11088" ph="SELECT F.idF... Follower" />
+            <marker date="1464213544372" expanded="true" signature="11358:11475" ph="SELECT F.idF... Follower" />
+            <marker date="1464213544372" expanded="true" signature="12114:12154" ph="SELECT idUse... User" />
+            <marker date="1464213544372" expanded="true" signature="12349:12385" ph="SELECT * FRO... User" />
+            <marker date="1464213544372" expanded="true" signature="13020:13060" ph="SELECT email... User" />
+            <marker date="1464213544372" expanded="true" signature="13297:13397" ph="SELECT U.ema... Follower" />
+            <marker date="1464213544372" expanded="true" signature="14096:14196" ph="SELECT U.ema... Follower" />
+            <marker date="1464213544372" expanded="true" signature="14850:14901" ph="SELECT idThr... Subscription" />
+            <marker date="1464213544372" expanded="true" signature="17371:17466" ph="SELECT DISTI... User" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/generic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="23" column="49" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
+            <marker date="1463604295980" expanded="true" signature="149:173" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="196:212" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="235:253" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="276:293" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="316:338" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="361:381" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="404:420" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="648:674" ph="SELECT COUNT... Forum" />
+            <marker date="1463604295980" expanded="true" signature="741:766" ph="SELECT COUNT... User" />
+            <marker date="1463604295980" expanded="true" signature="833:860" ph="SELECT COUNT... Thread" />
+            <marker date="1463604295980" expanded="true" signature="928:953" ph="SELECT COUNT... Post" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/forum.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="201" column="0" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/funcition.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="15" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
-          <folding>
-            <element signature="e#24#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/forum.py" />
+    <entry file="file://$PROJECT_DIR$/app/funcition.py" />
     <entry file="file://$PROJECT_DIR$/app/Thread.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="179" column="46" selection-start-line="179" selection-start-column="46" selection-end-line="179" selection-end-column="46" />
           <folding>
             <element signature="e#24#51#0" expanded="true" />
@@ -1023,14 +1063,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/create_db">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -1038,7 +1078,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/run_api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding />
         </state>
@@ -1046,7 +1086,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
@@ -1056,54 +1096,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myLog.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/User.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#27#0" expanded="true" />
+            <marker date="1464213544372" expanded="true" signature="1099:1139" ph="SELECT idUse... User" />
+            <marker date="1464213544372" expanded="true" signature="1469:1556" ph="INSERT INTO User... " />
+            <marker date="1464213544372" expanded="true" signature="1639:1667" ph="SELECT MAX(i... User" />
+            <marker date="1464213544372" expanded="true" signature="3420:3480" ph="INSERT INTO Follower... " />
+            <marker date="1464213544372" expanded="true" signature="7047:7132" ph="SELECT P.* F... Post" />
+            <marker date="1464213544372" expanded="true" signature="8431:8494" ph="DELETE FROM " />
+            <marker date="1464213544372" expanded="true" signature="9169:9223" ph="UPDATE User " />
+            <marker date="1464213544372" expanded="true" signature="9560:9595" ph="SELECT * FRO... User" />
+            <marker date="1464213544372" expanded="true" signature="10277:10315" ph="SELECT * FRO... User" />
+            <marker date="1464213544372" expanded="true" signature="10970:11088" ph="SELECT F.idF... Follower" />
+            <marker date="1464213544372" expanded="true" signature="11358:11475" ph="SELECT F.idF... Follower" />
+            <marker date="1464213544372" expanded="true" signature="12114:12154" ph="SELECT idUse... User" />
+            <marker date="1464213544372" expanded="true" signature="12349:12385" ph="SELECT * FRO... User" />
+            <marker date="1464213544372" expanded="true" signature="13020:13060" ph="SELECT email... User" />
+            <marker date="1464213544372" expanded="true" signature="13297:13397" ph="SELECT U.ema... Follower" />
+            <marker date="1464213544372" expanded="true" signature="14096:14196" ph="SELECT U.ema... Follower" />
+            <marker date="1464213544372" expanded="true" signature="14850:14901" ph="SELECT idThr... Subscription" />
+            <marker date="1464213544372" expanded="true" signature="17371:17466" ph="SELECT DISTI... User" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/generic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="23" column="49" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
+            <marker date="1463604295980" expanded="true" signature="149:173" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="196:212" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="235:253" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="276:293" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="316:338" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="361:381" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="404:420" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="648:674" ph="SELECT COUNT... Forum" />
+            <marker date="1463604295980" expanded="true" signature="741:766" ph="SELECT COUNT... User" />
+            <marker date="1463604295980" expanded="true" signature="833:860" ph="SELECT COUNT... Thread" />
+            <marker date="1463604295980" expanded="true" signature="928:953" ph="SELECT COUNT... Post" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/forum.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="201" column="0" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/funcition.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="15" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
-          <folding>
-            <element signature="e#24#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/forum.py" />
+    <entry file="file://$PROJECT_DIR$/app/funcition.py" />
     <entry file="file://$PROJECT_DIR$/app/Thread.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="179" column="46" selection-start-line="179" selection-start-column="46" selection-end-line="179" selection-end-column="46" />
           <folding>
             <element signature="e#24#51#0" expanded="true" />
@@ -1113,14 +1163,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/create_db">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -1128,21 +1178,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myLog.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/create_db">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/run_api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding />
         </state>
@@ -1150,25 +1200,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/conf/test.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/tools.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/func_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="17352">
           <caret line="977" column="24" selection-start-line="977" selection-start-column="16" selection-end-line="977" selection-end-column="24" />
           <folding>
             <element signature="e#17#26#0" expanded="true" />
@@ -1178,7 +1224,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="342">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
@@ -1188,63 +1234,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Forum.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.32258">
+        <state relative-caret-position="2700">
           <caret line="153" column="4" selection-start-line="153" selection-start-column="4" selection-end-line="153" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/forum.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="13.32258">
-          <caret line="153" column="4" selection-start-line="153" selection-start-column="4" selection-end-line="153" selection-end-column="4" />
-          <folding>
-            <element signature="e#24#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/funcition.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.129032">
-          <caret line="45" column="25" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="25" />
-          <folding>
-            <element signature="e#24#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/functions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.129032">
-          <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/generic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="49" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Post.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.387096">
-          <caret line="384" column="5" selection-start-line="384" selection-start-column="5" selection-end-line="384" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/forum.py" />
+    <entry file="file://$PROJECT_DIR$/app/funcition.py" />
     <entry file="file://$PROJECT_DIR$/app/Thread.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.1935484">
+        <state relative-caret-position="7758">
           <caret line="431" column="12" selection-start-line="431" selection-start-column="12" selection-end-line="431" selection-end-column="12" />
           <folding>
             <element signature="e#24#51#0" expanded="true" />
@@ -1254,11 +1254,80 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/User.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="10.627907">
-          <caret line="464" column="3" selection-start-line="464" selection-start-column="3" selection-end-line="464" selection-end-column="3" />
+        <state relative-caret-position="3308">
+          <caret line="304" column="17" selection-start-line="304" selection-start-column="17" selection-end-line="304" selection-end-column="17" />
+          <folding>
+            <marker date="1464213544372" expanded="true" signature="1099:1139" ph="SELECT idUse... User" />
+            <marker date="1464213544372" expanded="true" signature="1469:1556" ph="INSERT INTO User... " />
+            <marker date="1464213544372" expanded="true" signature="1639:1667" ph="SELECT MAX(i... User" />
+            <marker date="1464213544372" expanded="true" signature="3420:3480" ph="INSERT INTO Follower... " />
+            <marker date="1464213544372" expanded="true" signature="7047:7132" ph="SELECT P.* F... Post" />
+            <marker date="1464213544372" expanded="true" signature="8431:8494" ph="DELETE FROM " />
+            <marker date="1464213544372" expanded="true" signature="9169:9223" ph="UPDATE User " />
+            <marker date="1464213544372" expanded="true" signature="9560:9595" ph="SELECT * FRO... User" />
+            <marker date="1464213544372" expanded="true" signature="10277:10315" ph="SELECT * FRO... User" />
+            <marker date="1464213544372" expanded="true" signature="10970:11088" ph="SELECT F.idF... Follower" />
+            <marker date="1464213544372" expanded="true" signature="11358:11475" ph="SELECT F.idF... Follower" />
+            <marker date="1464213544372" expanded="true" signature="12114:12154" ph="SELECT idUse... User" />
+            <marker date="1464213544372" expanded="true" signature="12349:12385" ph="SELECT * FRO... User" />
+            <marker date="1464213544372" expanded="true" signature="13020:13060" ph="SELECT email... User" />
+            <marker date="1464213544372" expanded="true" signature="13297:13397" ph="SELECT U.ema... Follower" />
+            <marker date="1464213544372" expanded="true" signature="14096:14196" ph="SELECT U.ema... Follower" />
+            <marker date="1464213544372" expanded="true" signature="14850:14901" ph="SELECT idThr... Subscription" />
+            <marker date="1464213544372" expanded="true" signature="17371:17466" ph="SELECT DISTI... User" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/generic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="62" selection-start-line="18" selection-start-column="62" selection-end-line="18" selection-end-column="62" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
+            <marker date="1463604295980" expanded="true" signature="149:173" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="196:212" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="235:253" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="276:293" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="316:338" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="361:381" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="404:420" ph="DELETE FROM " />
+            <marker date="1463604295980" expanded="true" signature="648:674" ph="SELECT COUNT... Forum" />
+            <marker date="1463604295980" expanded="true" signature="741:766" ph="SELECT COUNT... User" />
+            <marker date="1463604295980" expanded="true" signature="833:860" ph="SELECT COUNT... Thread" />
+            <marker date="1463604295980" expanded="true" signature="928:953" ph="SELECT COUNT... Post" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Post.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6912">
+          <caret line="384" column="5" selection-start-line="384" selection-start-column="5" selection-end-line="384" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+            <marker date="1463604295980" expanded="true" signature="1451:1667" ph="INSERT INTO Post... " />
+            <marker date="1463604295980" expanded="true" signature="1834:1862" ph="SELECT MAX(i... Post" />
+            <marker date="1463604295980" expanded="true" signature="4754:4795" ph="SELECT idPos... Post" />
+            <marker date="1463604295980" expanded="true" signature="4961:5008" ph="UPDATE Post " />
+            <marker date="1463604295980" expanded="true" signature="5355:5396" ph="SELECT idPos... Post" />
+            <marker date="1463604295980" expanded="true" signature="5593:5640" ph="UPDATE Post " />
+            <marker date="1463604295980" expanded="true" signature="6094:6135" ph="SELECT idPos... Post" />
+            <marker date="1463604295980" expanded="true" signature="6332:6378" ph="UPDATE Post " />
+            <marker date="1463604295980" expanded="true" signature="7663:7699" ph="SELECT * FRO... Post" />
+            <marker date="1463604295980" expanded="true" signature="9061:9099" ph="SELECT * FRO... Post" />
+            <marker date="1463604295980" expanded="true" signature="11087:11124" ph="SELECT * FRO... Post" />
+            <marker date="1463604295980" expanded="true" signature="13048:13097" ph="UPDATE Post " />
+            <marker date="1463604295980" expanded="true" signature="13222:13271" ph="UPDATE Post " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
