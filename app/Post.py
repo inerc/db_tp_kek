@@ -70,7 +70,9 @@ def createPost():
     return response
 
 @app.route("/db/api/post/details/", methods = ['GET'])
+
 def postDetails():
+    tic = time()
     #logging.info("===================POST DETAILS BEGIN=====================\n============================================================\n")
 
     try:
@@ -93,10 +95,16 @@ def postDetails():
     response = json.dumps({ "code": 0, "response": answer})
     #logging.info("  RESPONSE : " + response)
    # logging.info("===================POST DETAILS END=====================\n============================================================\n")
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/post/details/")
     return response
 
 @app.route("/db/api/post/list/", methods = ['GET'])
+
 def postsList():
+    tic = time()
     forum   = None
     thread  = None
     try:
@@ -122,6 +130,10 @@ def postsList():
 
 
     response = json.dumps({"code": 0, "response": answer})
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/post/details/")
     return response
 
 @app.route("/db/api/post/remove/", methods = ['POST'])

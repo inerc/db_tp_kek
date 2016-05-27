@@ -6,8 +6,9 @@ import json
 from time import time
 
 @app.route("/db/api/forum/create/", methods = ['POST'])
-tic = time()
+
 def createForum():
+    tic = time()
     #logging.info("================FORUM CREATION")
     # logging.info("REQUEST :")
     # logging.info(request.json)
@@ -49,12 +50,13 @@ def createForum():
     tac = time()
     MyTime = tac - tic
     if MyTime > LimitTime:
-        print (LimitTime, "db/api/forum/create/")
+        print (MyTime, "db/api/forum/create/")
     return response
     
 @app.route("/db/api/forum/details/", methods = ['GET'])
-tic = time()
+
 def forumDetails():
+    tic = time()
     from User import getUserInfoByID
 
     try:
@@ -75,12 +77,13 @@ def forumDetails():
     tac = time()
     MyTime = tac - tic
     if MyTime > LimitTime:
-        print (LimitTime, "/db/api/forum/details/")
+        print (MyTime, "/db/api/forum/details/")
     return response
     
 @app.route("/db/api/forum/listPosts/", methods = ['GET'])
-tic = time()
+
 def forumListPosts():
+
    # logging.info("FORUM LIST POSTS===========================")
     from Post import getListPostsOfForum
     from Thread import getThreadDetailsByID
@@ -112,15 +115,12 @@ def forumListPosts():
    # logging.info("  Response : ")
    # logging.info(response)
    # logging.info("FORUM LIST POSTS SUCCESSFUL================")
-    tac = time()
-    MyTime = tac - tic
-    if MyTime > LimitTime:
-         print (LimitTime, "/db/api/forum/listPosts/")
     return response
     
 @app.route("/db/api/forum/listUsers/", methods = ['GET'])
-tic = time()
+
 def forumListUsers():
+    tic = time()
     from User import getListUsersOfForum
 
     #logging.info("FORUM LIST USERS===========================")
@@ -142,12 +142,12 @@ def forumListUsers():
     tac = time()
     MyTime = tac - tic
     if MyTime > LimitTime:
-        print (LimitTime, "db/api/forum/listUsers/")
+        print (MyTime, "db/api/forum/listUsers/")
     return response
     
 @app.route("/db/api/forum/listThreads/", methods = ['GET'])
-tic = time()
 def forumListThreads():
+    tic = time()
    # logging.info("FORUM LIST THREADS===========================")
     from Thread import getListThreadsOfForum
 
@@ -177,7 +177,7 @@ def forumListThreads():
     tac = time()
     MyTime = tac - tic
     if MyTime > LimitTime:
-        print (LimitTime, "db/api/forum/listThreads/")
+        print (MyTime, "db/api/forum/listThreads/")
     return response
 
 def getForumDetailsByShortName(short_name):

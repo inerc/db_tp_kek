@@ -14,7 +14,7 @@ error_messages = ["OK",
          "uncorrect semantic query",
          "undefined error",
          "already exists"]
-LimitTime = 0.009
+LimitTime = 0.03
 #USER
 def isString(args):
     for arg in args:

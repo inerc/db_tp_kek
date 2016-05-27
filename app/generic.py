@@ -1,6 +1,7 @@
 from app import app, cursor
 from flask import request
 import json
+from time import time
 
 @app.route("/db/api/clear/", methods = ['POST'])
 def clear():
@@ -15,7 +16,9 @@ def clear():
     return response
 
 @app.route("/db/api/status/", methods = ['GET'])
+
 def status():
+    tic = time()
     db_info = { "forum": 0, "user": 0, "thread": 0, "post": 0 }
     cursor.execute("SELECT COUNT(*) FROM Forum")
     db_info["forum"] = cursor.fetchone()[0]
@@ -26,4 +29,8 @@ def status():
     cursor.execute("SELECT COUNT(*) FROM Post")
     db_info["post"] = cursor.fetchone()[0]
     response = json.dumps({"code": 0, "response": db_info})
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/status/")
     return response

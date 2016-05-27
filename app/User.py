@@ -132,7 +132,9 @@ def follow():
     return response
 
 @app.route("/db/api/user/listFollowers/", methods = ['GET'])
+
 def listFollowers():
+    tic = time()
    # logging.info("================USER listFollowers========================")
     try:
         user = request.args.get("user")
@@ -160,10 +162,16 @@ def listFollowers():
   #  logging.info("Response : ")
   #  logging.info(response)
    # logging.info("================USER listFollowers END====================\n")
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/user/listFollowers/")
     return response
 
 @app.route("/db/api/user/listFollowing/", methods = ['GET'])
+
 def listFollowing():
+    tic = time()
   #  logging.info("================USER listFollowing========================")
     try:
         user = request.args.get("user")
@@ -192,10 +200,16 @@ def listFollowing():
   #  logging.info("Response : ")
   #  logging.info(response)
    # logging.info("================USER listFollowing END====================\n")
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/user/listFollowing/")
     return response
 
 @app.route("/db/api/user/listPosts/", methods = ['GET'])
+
 def userListPosts():
+    tic = time()
   #  logging.info("================USER LISTPOSTS================")
     try:
         user = request.args.get("user")
@@ -233,6 +247,10 @@ def userListPosts():
     response = json.dumps({ "code": 0, "response": result})
   #  logging.info("  Response : " + response)
   #  logging.info("================USER LISTPOSTS END============")
+    tac = time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+      print (MyTime, "/db/api/user/listPosts/")
     return response
 
 @app.route("/db/api/user/unfollow/", methods = ['POST'])

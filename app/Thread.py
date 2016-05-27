@@ -6,6 +6,7 @@ from Forum import *
 from flask import request
 import Post
 import json
+from time import time
 
 @app.route("/db/api/thread/create/", methods = ['POST'])
 def createThread():
@@ -85,7 +86,9 @@ def closeThread():
     return response
 
 @app.route("/db/api/thread/details/", methods = ['GET'])
+
 def threadDetails():
+    tic = time()
    # logging.info("===================THREAD DETAILS BEGIN=====================\n==========================================================")
 
     try:
@@ -109,10 +112,16 @@ def threadDetails():
     #logging.info("  RESPONSE : ")
     #logging.info(response)
    # logging.info("===================THREAD DETAILS END=====================\n==========================================================\n")
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+       print (MyTime, "/db/api/thread/details/")
     return response
 
 @app.route("/db/api/thread/list/", methods = ['GET'])
+
 def threadsList():
+    tic = time()
    # logging.info("=====================================THREAD LIST BEGIN============================================")
     try:
         user = request.args.get("user")
@@ -160,10 +169,16 @@ def threadsList():
    # logging.info("Response : ")
     #logging.info(response)
     #logging.info("=====================================THREAD LIST END============================================")
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+       print (MyTime, "/db/api/thread/list/")
     return response
 
 @app.route("/db/api/thread/listPosts/", methods = ['GET'])
+
 def threadListPosts():
+    tic = time()
     #logging.info("THREAD LIST POSTS===========================")
 
     from Post import getListPostsOfThread
@@ -187,6 +202,10 @@ def threadListPosts():
     #logging.info(response)
 
    # logging.info("THREAD LIST POSTS SUCCESSFUL================")
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/thread/listPosts/")
     return response
 
 @app.route("/db/api/thread/open/", methods = ['POST'])
