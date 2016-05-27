@@ -8,6 +8,7 @@ import json
 
 @app.route("/db/api/post/create/", methods = ['POST'])
 def createPost():
+    tic = time()
    # logging.info("================Post CREATION\n")
     #logging.info("Request : ")
     #logging.info(request.json)
@@ -67,6 +68,10 @@ def createPost():
     response = json.dumps({"code": 0, "response": answer})
    # logging.info("  Response : " + response)
     #logging.info("================SUCCESSFUL Post CREATION\n")
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/post/create/ +++POST")
     return response
 
 @app.route("/db/api/post/details/", methods = ['GET'])
@@ -133,11 +138,12 @@ def postsList():
     tac =time()
     MyTime = tac - tic
     if MyTime > LimitTime:
-        print (MyTime, "/db/api/post/details/")
+        print (MyTime, "/db/api/post/list/")
     return response
 
 @app.route("/db/api/post/remove/", methods = ['POST'])
 def removePost():
+    tic = time()
     if "post" in request.json:
         post = request.json["post"]
     else:
@@ -153,10 +159,15 @@ def removePost():
     cursor.execute(sql, [post])
 
     response = json.dumps({"code": 0, "response": post})
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/post/remove/ +++POST")
     return response
 
 @app.route("/db/api/post/restore/", methods = ['POST'])
 def restorePost():
+    tic = time()
     if "post" in request.json:
         post = request.json["post"]
     else:
@@ -173,10 +184,15 @@ def restorePost():
     cursor.execute(sql, [post])
 
     response = json.dumps({"code": 0, "response": post})
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/post/restore/ +++POST")
     return response
 
 @app.route("/db/api/post/update/", methods = ['POST'])
 def updatePost():
+    tic = time()
     #logging.info("  Updating post")
     if "post" in request.json and "message" in request.json:
         post = request.json["post"]
@@ -195,10 +211,15 @@ def updatePost():
     cursor.execute(sql, [message, post])
     response = json.dumps({"code": 0, "response": post})
    # logging.info("  Post " + str(post) + (" is updated successfully\n"))
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/post/update/ +++POST")
     return response
 
 @app.route("/db/api/post/vote/", methods = ['POST'])
 def votePost():
+    tic = time()
     #logging.info("================POST VOTE=====================")
 
     if "vote" in request.json and "post" in request.json:
@@ -226,6 +247,10 @@ def votePost():
    # logging.info("  Response: ")
    # logging.info(response)
     #logging.info("================POST VOTE END=================")
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/post/vote/ +++POST")
 
     return response
 

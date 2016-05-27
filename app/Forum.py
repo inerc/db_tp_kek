@@ -83,7 +83,7 @@ def forumDetails():
 @app.route("/db/api/forum/listPosts/", methods = ['GET'])
 
 def forumListPosts():
-
+    tic = time()
    # logging.info("FORUM LIST POSTS===========================")
     from Post import getListPostsOfForum
     from Thread import getThreadDetailsByID
@@ -115,6 +115,10 @@ def forumListPosts():
    # logging.info("  Response : ")
    # logging.info(response)
    # logging.info("FORUM LIST POSTS SUCCESSFUL================")
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/forum/listPosts/")
     return response
     
 @app.route("/db/api/forum/listUsers/", methods = ['GET'])

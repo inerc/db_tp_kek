@@ -5,6 +5,7 @@ from time import time
 
 @app.route("/db/api/clear/", methods = ['POST'])
 def clear():
+    tic = time()
     cursor.execute("DELETE FROM Subscription")
     cursor.execute("DELETE FROM Post")
     cursor.execute("DELETE FROM Thread")
@@ -13,6 +14,10 @@ def clear():
     cursor.execute("DELETE FROM Follower")
     cursor.execute("DELETE FROM User")
     response = json.dumps({"code": 0, "response": "OK"})
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/clear/ +++POST")
     return response
 
 @app.route("/db/api/status/", methods = ['GET'])
