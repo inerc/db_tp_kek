@@ -7,6 +7,7 @@ import Forum
 
 @app.route("/db/api/user/create/", methods = ['POST'])
 def createUser():
+    tic = time()
    # logging.info("================USER CREATION")
     try:
         email    = request.json["email"]
@@ -74,10 +75,15 @@ def createUser():
     answer = {"code": 0, "response": data}
     response = json.dumps(answer)
    # logging.info("================SUCCESSFUL USER CREATION\n")
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/user/create/ +++POST")
     return response
 
 @app.route("/db/api/user/details/", methods = ['GET'])
 def userDetails():
+    tic = time()
     try:
         email = request.args.get("user")
     except:
@@ -88,13 +94,22 @@ def userDetails():
 
     answer = getUserInfoByEmail(email)
     if answer != None:
+        tac =time()
+        MyTime = tac - tic
+        if MyTime > LimitTime:
+            print (MyTime, "/db/api/user/details/ ++None")
         return json.dumps({"code": 0, "response": answer})
     else:
+        tac =time()
+        MyTime = tac - tic
+        if MyTime > LimitTime:
+            print (MyTime, "/db/api/user/details/")
         return json.dumps({"code": 1, "response": error_messages[1]})
 
 
 @app.route("/db/api/user/follow/", methods = ['POST'])
 def follow():
+    tic = time()
    # logging.info("================USER FOLLOW========================")
     try:
         follower = request.json["follower"]
@@ -129,10 +144,16 @@ def follow():
    # logging.info(userInfo)
     response = json.dumps({"code": 0, "response": userInfo})
    # logging.info("================USER FOLLOW SUCCESS================\n")
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/user/follow/ +++POST")
     return response
 
 @app.route("/db/api/user/listFollowers/", methods = ['GET'])
+
 def listFollowers():
+    tic = time()
    # logging.info("================USER listFollowers========================")
     try:
         user = request.args.get("user")
@@ -160,10 +181,16 @@ def listFollowers():
   #  logging.info("Response : ")
   #  logging.info(response)
    # logging.info("================USER listFollowers END====================\n")
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/user/listFollowers/")
     return response
 
 @app.route("/db/api/user/listFollowing/", methods = ['GET'])
+
 def listFollowing():
+    tic = time()
   #  logging.info("================USER listFollowing========================")
     try:
         user = request.args.get("user")
@@ -192,10 +219,16 @@ def listFollowing():
   #  logging.info("Response : ")
   #  logging.info(response)
    # logging.info("================USER listFollowing END====================\n")
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/user/listFollowing/")
     return response
 
 @app.route("/db/api/user/listPosts/", methods = ['GET'])
+
 def userListPosts():
+    tic = time()
   #  logging.info("================USER LISTPOSTS================")
     try:
         user = request.args.get("user")
@@ -233,10 +266,15 @@ def userListPosts():
     response = json.dumps({ "code": 0, "response": result})
   #  logging.info("  Response : " + response)
   #  logging.info("================USER LISTPOSTS END============")
+    tac = time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+      print (MyTime, "/db/api/user/listPosts/")
     return response
 
 @app.route("/db/api/user/unfollow/", methods = ['POST'])
 def unfollow():
+    tic = time()
   #  logging.info("================USER UNFOLLOW========================")
     try:
         follower = request.json["follower"]
@@ -258,10 +296,15 @@ def unfollow():
 
     response = json.dumps({"code": 0, "response": answer})
  #   logging.info("================USER UNFOLLOW END====================")
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/user/unfollow/ +++POST")
     return response
 
 @app.route("/db/api/user/updateProfile/", methods = ['POST'])
 def updateProfile():
+    tic = time()
  #   logging.info("=======================UPDATING PROFILE========================")
     try:
         about = request.json["about"]
@@ -277,6 +320,10 @@ def updateProfile():
     response = json.dumps({"code": 0, "response": result})
   #  logging.info("  Result : " + response)
   #  logging.info("=======================UPDATING PROFILE SUCCESSFUL=============")
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/user/updateProfile/ +++POST")
     return response
 
 def getUserInfoByEmail(email):

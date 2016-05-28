@@ -3,9 +3,12 @@ from app import app, cursor
 from functions import *
 from flask import request
 import json
+from time import time
 
 @app.route("/db/api/forum/create/", methods = ['POST'])
+
 def createForum():
+    tic = time()
     #logging.info("================FORUM CREATION")
     # logging.info("REQUEST :")
     # logging.info(request.json)
@@ -44,10 +47,16 @@ def createForum():
 
     response = json.dumps(answer)
     #logging.info("================SUCCESSFUL FORUM CREATION\n")
+    tac = time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "db/api/forum/create/")
     return response
     
 @app.route("/db/api/forum/details/", methods = ['GET'])
+
 def forumDetails():
+    tic = time()
     from User import getUserInfoByID
 
     try:
@@ -65,10 +74,16 @@ def forumDetails():
         user = getUserInfoByID(answer["idFounder"])
         answer["user"] = user
     response = json.dumps({ "code": 0, "response": answer})
+    tac = time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/forum/details/")
     return response
     
 @app.route("/db/api/forum/listPosts/", methods = ['GET'])
+
 def forumListPosts():
+    tic = time()
    # logging.info("FORUM LIST POSTS===========================")
     from Post import getListPostsOfForum
     from Thread import getThreadDetailsByID
@@ -100,10 +115,16 @@ def forumListPosts():
    # logging.info("  Response : ")
    # logging.info(response)
    # logging.info("FORUM LIST POSTS SUCCESSFUL================")
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/forum/listPosts/")
     return response
     
 @app.route("/db/api/forum/listUsers/", methods = ['GET'])
+
 def forumListUsers():
+    tic = time()
     from User import getListUsersOfForum
 
     #logging.info("FORUM LIST USERS===========================")
@@ -122,10 +143,15 @@ def forumListUsers():
     response = json.dumps({"code": 0, "response": answer})
    # logging.info("  Response : ")
     #logging.info(response)
+    tac = time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "db/api/forum/listUsers/")
     return response
     
 @app.route("/db/api/forum/listThreads/", methods = ['GET'])
 def forumListThreads():
+    tic = time()
    # logging.info("FORUM LIST THREADS===========================")
     from Thread import getListThreadsOfForum
 
@@ -152,6 +178,10 @@ def forumListThreads():
     response = json.dumps({"code": 0, "response": answer})
     #logging.info("  Response : ")
    # logging.info(response)
+    tac = time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "db/api/forum/listThreads/")
     return response
 
 def getForumDetailsByShortName(short_name):
