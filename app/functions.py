@@ -6,6 +6,7 @@ f = open("myLog.log", "w")
 f.close()
 logging.basicConfig(filename='myLog.log', level=logging.DEBUG, format='%(message)s')
 
+global LimitTime
 #сообщения к кодам ответов (код сообщения равен индексу в массиве)
 error_messages = ["OK",
          "object not found",
@@ -13,7 +14,7 @@ error_messages = ["OK",
          "uncorrect semantic query",
          "undefined error",
          "already exists"]
-
+LimitTime = 0.009
 #USER
 def isString(args):
     for arg in args:

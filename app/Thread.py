@@ -6,9 +6,11 @@ from Forum import *
 from flask import request
 import Post
 import json
+from time import time
 
 @app.route("/db/api/thread/create/", methods = ['POST'])
 def createThread():
+    tic = time()
     #logging.info("================Thread CREATION")
     try:
         forum = request.json["forum"]
@@ -57,10 +59,15 @@ def createThread():
     response = json.dumps({"code": 0, "response": answer })
    # logging.info("  Answer : " + response)
     #logging.info("================SUCCESSFUL THREAD CREATION\n")
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/thread/create/ +++POST")
     return response
 
 @app.route("/db/api/thread/close/", methods = ['POST'])
 def closeThread():
+    tic = time()
    # logging.info("=====================================CLOSING THREAD BEGIN==========================================")
     try:
         thread = request.json["thread"]
@@ -82,10 +89,16 @@ def closeThread():
    # logging.info("  Response : ")
    # logging.info(response)
    # logging.info("=====================================CLOSING THREAD END============================================\n")
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/thread/close/ +++POST")
     return response
 
 @app.route("/db/api/thread/details/", methods = ['GET'])
+
 def threadDetails():
+    tic = time()
    # logging.info("===================THREAD DETAILS BEGIN=====================\n==========================================================")
 
     try:
@@ -109,10 +122,16 @@ def threadDetails():
     #logging.info("  RESPONSE : ")
     #logging.info(response)
    # logging.info("===================THREAD DETAILS END=====================\n==========================================================\n")
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+       print (MyTime, "/db/api/thread/details/")
     return response
 
 @app.route("/db/api/thread/list/", methods = ['GET'])
+
 def threadsList():
+    tic = time()
    # logging.info("=====================================THREAD LIST BEGIN============================================")
     try:
         user = request.args.get("user")
@@ -160,10 +179,16 @@ def threadsList():
    # logging.info("Response : ")
     #logging.info(response)
     #logging.info("=====================================THREAD LIST END============================================")
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+       print (MyTime, "/db/api/thread/list/")
     return response
 
 @app.route("/db/api/thread/listPosts/", methods = ['GET'])
+
 def threadListPosts():
+    tic = time()
     #logging.info("THREAD LIST POSTS===========================")
 
     from Post import getListPostsOfThread
@@ -187,10 +212,15 @@ def threadListPosts():
     #logging.info(response)
 
    # logging.info("THREAD LIST POSTS SUCCESSFUL================")
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/thread/listPosts/")
     return response
 
 @app.route("/db/api/thread/open/", methods = ['POST'])
 def openThread():
+    tic = time()
     if "thread" in request.json:
         thread = request.json["thread"]
     else:
@@ -208,10 +238,15 @@ def openThread():
     cursor.execute(sql, [thread])
 
     response = json.dumps({"code": 0, "response": thread})
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/thread/open/ +++POST")
     return response
 
 @app.route("/db/api/thread/remove/", methods = ['POST'])
 def removeThread():
+    tic = time()
     from Post import removePostsOfThread
     if "thread" in request.json:
        # logging.info("REMOVING THREAD")
@@ -233,10 +268,15 @@ def removeThread():
 
     response = json.dumps({ "code": 0, "response": {"thread": thread}})
    # logging.info("REMOVING THREAD SUCCESSFULL\n")
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/thread/remove/ +++POST")
     return response
 
 @app.route("/db/api/thread/restore/", methods = ['POST'])
 def restoreThread():
+    tic = time()
     from Post import restorePostsOfThread
     if "thread" in request.json:
        # logging.info("RESTORING THREAD")
@@ -258,10 +298,15 @@ def restoreThread():
 
     response = json.dumps({ "code": 0, "response": {"thread": thread}})
    # logging.info("REMOVING THREAD SUCCESSFULL\n")
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/thread/restore/ +++POST")
     return response
 
 @app.route("/db/api/thread/subscribe/", methods = ['POST'])
 def subscribeThread():
+    tic = time()
     #logging.info("=======================SUBSCRIBE THREAD======================")
     try:
         user = request.json["user"]
@@ -282,10 +327,15 @@ def subscribeThread():
     response = json.dumps({"code": 0, "response": {"thread": thread, "user": user}})
     #logging.info("  Result : " + response)
     #logging.info("=======================SUBSCRIBE THREAD SUCCESS======================")
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/thread/subscribe/ +++POST")
     return response
 
 @app.route("/db/api/thread/unsubscribe/", methods = ['POST'])
 def unsubscribeThread():
+    tic = time()
    # logging.info("=====================UNSUBSCRIBE THREAD======================")
 
     try:
@@ -306,10 +356,15 @@ def unsubscribeThread():
     response = json.dumps({"code": 0, "response": {"thread": thread, "user": user}})
     #logging.info("  Result : " + response)
     #logging.info("=====================UNSUBSCRIBE THREAD SUCCESS======================")
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/thread/unsubscribe/ +++POST")
     return response
 
 @app.route("/db/api/thread/update/", methods = ['POST'])
 def updateThread():
+    tic = time()
    # logging.info("=======================UPDATE THREAD==========================")
     try:
         message = request.json["message"]
@@ -324,11 +379,15 @@ def updateThread():
     answer = getThreadDetailsByID(thread, [])
     response = json.dumps({"code": 0, "response": answer})
    # logging.info("=======================UPDATE THREAD SUCCESS==================")
-
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/thread/update/ +++POST")
     return response
 
 @app.route("/db/api/thread/vote/", methods = ['POST'])
 def voteThread():
+    tic = time()
     #logging.info("================THREAD VOTE=====================")
 
     if "vote" in request.json and "thread" in request.json:
@@ -356,7 +415,10 @@ def voteThread():
    # logging.info("  Response: ")
    # logging.info(response)
    # logging.info("================THREAD VOTE END=================")
-
+    tac =time()
+    MyTime = tac - tic
+    if MyTime > LimitTime:
+        print (MyTime, "/db/api/thread/vote/ +++POST")
     return response
 
 def getThreadDetailsByID(threadID, related):
